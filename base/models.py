@@ -12,3 +12,17 @@ class Room(models.Model):
     #participants=
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)  
+    
+    def __str__(self):
+        #return str(self.name) when returning an str wrapped it with str(value)
+        return self.name
+    
+class Message(models.Model):
+    #user = 
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    body = models.TextField()
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)  
+    def __str__(self):
+        #return str(self.name) when returning an str wrapped it with str(value)
+        return self.body[0:50] #note: trim it down to 50 characters
