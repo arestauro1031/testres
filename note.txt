@@ -8,3 +8,6 @@ SAMPLE ONLINE CATERING reservation
 https://www.sourcecodester.com/php/14896/online-catering-reservation-system-using-php-free-source-code.html
 https://www.sourcecodester.com/php/11355/online-catering-reservation.html
 https://www.youtube.com/watch?v=zZ6vybT1HQs
+
+vs code extensions
+https://www.youtube.com/watch?v=1UyQaR8pvjk
