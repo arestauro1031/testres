@@ -7,7 +7,7 @@ email: ayan.restauro@yahoo.com
 set autocommit = off;               must be set once before using rollback
 commit;                             commit current state to use rollback transaction
 rollback;                           rollback to previous state
-
+                        ADD unique constraints to products or foods to avoid duplication and also can be used to names
 
 
 SAMPLE ONLINE CATERING reservation
