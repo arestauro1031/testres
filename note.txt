@@ -4,6 +4,12 @@ pass: yayan123
 email: ayan.restauro@yahoo.com
 
 
+set autocommit = off;               must be set once before using rollback
+commit;                             commit current state to use rollback transaction
+rollback;                           rollback to previous state
+
+
+
 SAMPLE ONLINE CATERING reservation
 https://www.sourcecodester.com/php/14896/online-catering-reservation-system-using-php-free-source-code.html
 https://www.sourcecodester.com/php/11355/online-catering-reservation.html
