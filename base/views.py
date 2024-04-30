@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Room
+from .models import Room, Employees
 
 # Create your views here.
 # rooms = [
@@ -12,10 +12,16 @@ from .models import Room
 
 def home(request):
     rooms = Room.objects.all()
-    context = {'rooms': rooms}
+    employees = Employees.objects.all()
+    
+    context = {'rooms': rooms, 'employees':employees}
     return render(request, 'base/home.html', context)
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
     context = {'room': room}
     return render(request, 'base/room.html', context)
+
+def employees(request):
+    employees = Employees.objects.all()
+    return render(request, 'base/home.html')
