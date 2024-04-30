@@ -26,3 +26,6 @@ class Message(models.Model):
     def __str__(self):
         #return str(self.name) when returning an str wrapped it with str(value)
         return self.body[0:50] #note: trim it down to 50 characters
+    
+class Employees(models.Model):
+    first_name = models.CharField ()
