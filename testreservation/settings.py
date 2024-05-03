@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'testreservation.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "mydb",
+        "NAME": "testreservation",
         "USER": "root",
         "PASSWORD": "root",
         "HOST": "127.0.0.1",

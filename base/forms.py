@@ -1,5 +1,5 @@
 from django import forms
-from datetime import date
+from datetime import datetime
 from .models import Employees
 
 class EmployeeForm(forms.Form):
@@ -19,5 +19,5 @@ class EmployeeForm(forms.Form):
         widget=forms.DateInput(attrs={'class': 'form-control',
                                       'type':'datetime-local'
                                       }),
-        initial=str(date.today())
+        initial=str(datetime.today())
     )

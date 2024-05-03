@@ -5,10 +5,20 @@
 
 
 <div>
-    <label for="birthday">Birthday:</label>
-    <input type="date" id="birthday" name="birthday">
 
-    <input type="submit" name="dateSubmit">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="emp_name">Name:</label>
+        <input type="text" id="emp_name" name="emp_name">
+        <label for="join_date">Join date:</label>
+        <input type="date" id="join_date" name="join_date">
+
+
+        {{form.as_p}}
+
+
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
 </div>
 
 
@@ -35,13 +45,13 @@
 
 {% endfor %} {% endcomment %}
 
-{% for room in rooms %}
+{% comment %} {% for room in rooms %}
 <div>
     <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}} </a> </h5>
 
 
-</div>
+</div> {% endcomment %}
 
-{% endfor %}
+{% comment %} {% endfor %} {% endcomment %}
 
 {% endblock content %}
