@@ -28,6 +28,6 @@ class Message(models.Model):
         return self.body[0:50] #note: trim it down to 50 characters
     
 class Employees(models.Model):
-    first_name = models.CharField (max_length=50)
-    last_name = models.CharField (max_length=50)
-    hourly_pay = models.IntegerField()
+    emp_name = models.CharField (max_length=50, null=False, blank=False)
+    hourly_pay = models.DecimalField(max_digits=5, decimal_places=2)
+    join_date = models.DateField(null=True, blank=True)

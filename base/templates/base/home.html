@@ -4,11 +4,15 @@
 <h1>Home Template</h1>
 
 
-<div><label for="birthday">Birthday:</label>
-    <input type="date" id="birthday" name="birthday"></div>
+<div>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday">
+
+    <input type="submit" name="dateSubmit">
+</div>
 
 
-{% for employee in employees %}
+{% comment %} {% for employee in employees %}
 <div>
     <style>
         table,
@@ -29,7 +33,7 @@
 </div>
 
 
-{% endfor %}
+{% endfor %} {% endcomment %}
 
 {% for room in rooms %}
 <div>

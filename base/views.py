@@ -1,13 +1,8 @@
 from django.shortcuts import render
 from .models import Room, Employees
-
-# Create your views here.
-# rooms = [
-#     {'id': 1, 'name': 'Lets Develop python'},
-#     {'id': 2, 'name': 'Design with me'},
-#     {'id': 3, 'name': 'Frontend developers'},
-    
-# ]
+from datetime import datetime
+from .forms import EmployeeForm
+from django.http import HttpResponse
 
 
 def home(request):
@@ -23,5 +18,16 @@ def room(request, pk):
     return render(request, 'base/room.html', context)
 
 def employees(request):
-    employees = Employees.objects.all()
-    return render(request, 'base/home.html')
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['emp_name']
+            join_date = form.cleaned_data[join_date]
+            emp = Employees.objects.create(
+                emp_name = name,
+                set_joining_date = join_date
+            )
+            emp.save()
+            return HttpResponse("The data is saved in the datbase")
+        form = EmployeeForm()
+    return render(request, 'base/home.html', {'form':  form})
