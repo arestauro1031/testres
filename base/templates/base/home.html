@@ -4,14 +4,31 @@
 <h1>Home Template</h1>
 
 
+<div><label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday"></div>
+
 
 {% for employee in employees %}
 <div>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
 
-    {{employee.first_name}}
-    {{employee.last_name}}
-    {{employee.hourly_pay}}
+    <table>
+        <tr>
+            <td>{{employee.first_name}}</td>
+            <td>{{employee.last_name}}</td>
+            <td>{{employee.hourly_pay}}</td>
+        </tr>
+    </table>
 </div>
+
+
 {% endfor %}
 
 {% for room in rooms %}
