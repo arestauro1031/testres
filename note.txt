@@ -3,6 +3,8 @@ name: yayan
 pass: yayan123
 email: ayan.restauro@yahoo.com
 
+py manage.py createsuperuser
+
 
 set autocommit = off;               must be set once before using rollback
 commit;                             commit current state to use rollback transaction
